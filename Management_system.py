@@ -28,27 +28,33 @@ while status:
             sub=input("Enter a subject : ")
             marks=int(input("Enter a marks : "))
             fee=int(input("Enter a fees : "))
-            choice=input("Do you want to add another subject ? : ").lower()
-            if choice=='y' or choice=='yes':
-                sub=input("Enter a subject : ")
-                marks=int(input("Enter a marks : "))
-                fee=int(input("Enter a fees : "))
+            sub1=input("Enter another subject : ")
+            marks1=int(input("Enter a marks : "))
+            fee1=int(input("Enter a fees : "))
 
-                student[sn]={
+            student[sn]={
                     'First name' : fname,
                     'Last name' : lname,
                     'Phone number' : pnum,
                     'Subject' : sub,
                     'Marks' : marks,
-                    'Fees'  : fee
+                    'Fees'  : fee,
+                    'Anothe Subject' : sub1,
+                    'Marks' : marks1,
+                    'Fees'  : fee1
+
                 }
+            print("Student Added successfully.")
+            choice=input("Do you want to add more student? ").lower()
+            if choice=='y' or choice=='yes':
+                status=True
 
         elif choice==2:
             print(student)
             remove=int(input("Enter Serial Number of student you want to remove : "))
             if remove in student.keys():
                 student.pop(remove)
-            print(student)
+            print("Student renoved successfully.",student)
 
 
 
@@ -61,11 +67,21 @@ while status:
             1. Add marks of student
             2. View all student 
     """)
+        choice=int(input("Enter a Choice by Faculty : "))
+        if choice==1:
+            pass
+        elif choice==2:
+            print(student)
         
     elif roleid==3:
         print("""
             1. View Details
     """)
+        choice=int(input("Enter a Choice by Student : "))
+        if choice==1:
+            user=int(input("Enter your Serial Number : "))
+            print(student.keys())
+        status=True
         
     else:
         print("Invalid Input please enter proper input.")
