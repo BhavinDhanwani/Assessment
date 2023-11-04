@@ -1,10 +1,10 @@
 #  Fruit Market :
 
 menu="""
-    WELCOME TO FRUIT MARKET
+    ::::::::: WELCOME TO FRUIT MARKET :::::::::
 
-    1) Manager
-    2) Customer
+                    1) Manager
+                    2) Customer
 """
 product={}  # Creating Blank Dictionary
 
@@ -83,4 +83,4 @@ while flag:
                 else:
                     status=False
     else:
-        print("Invalid Input enter 1 or 2 only.")
+        print("\nInvalid Input enter 1 or 2 only.")

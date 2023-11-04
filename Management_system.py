@@ -41,9 +41,7 @@ while status:
                     'Fees'  : fee,
                     'Anothe Subject' : sub1,
                     'Marks' : marks1,
-                    'Fees'  : fee1
-
-                }
+                    'Fees'  : fee1}
             print("Student Added successfully.")
             choice=input("Do you want to add more student? ").lower()
             if choice=='y' or choice=='yes':
@@ -56,11 +54,14 @@ while status:
                 student.pop(remove)
             print("Student renoved successfully.",student)
 
-
-
         elif choice==3:
             print(student)
-
+        
+        elif choice==4:
+            view=int(input("Enter Serial number to View Student Details : "))
+            print(student[view])
+        else:
+            print("Please select from the given choice.")
 
     elif roleid==2:
         print("""
@@ -69,7 +70,16 @@ while status:
     """)
         choice=int(input("Enter a Choice by Faculty : "))
         if choice==1:
-            pass
+            std_id=int(input("\nEnter student serial number in which you want to add marks : "))
+            if std_id in student:
+                choice=int(input("Which subject marks you want to change 1 or 2? :"))
+                if choice==1:
+                    pass
+                elif choice==2:
+                    pass
+                else:
+                    print("Choose correct subject.")
+                
         elif choice==2:
             print(student)
         
@@ -85,3 +95,4 @@ while status:
         
     else:
         print("Invalid Input please enter proper input.")
+        status=False
