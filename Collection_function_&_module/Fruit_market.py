@@ -15,13 +15,14 @@ while flag:
     status=True
     if choice==1:
         # Manager panel
-        print("""
+        menu1=("""
         FRUIT MARKET MANAGER
         
         1) Add Fruit Stock
         2) View Fruit Stock
         3) Update Fruit Stock
 """)
+        print(menu1)
         choice=int(input("Enter Your Choice : "))
         if choice==1:
             while status:
@@ -56,10 +57,14 @@ while flag:
                     else: 
                         flag=False
         elif choice==2:
-            print("Available Fruit Stock",product)
+            if product=={}:
+                print("Currently No Stock Available.")
+            else:
+                print("Available Fruit Stock is : ",product)
         elif choice==3:
-            print("Update Fruit Stock")
-            specific_product
+            print("Update Fruit Stock option will be added soon.")
+        else:
+            print("Invalid Input, Please select a valid option.")
     elif choice==2:
         # customer panel
         print("\n ::::::: PRODUCT MENU ::::::: ")
@@ -70,17 +75,16 @@ while flag:
         while status:
             prd=input("What do you want to buy? : ")
             if prd in product:
-                prd=cart
-                print(cart)
-            else:
-                print(f"{prd} is not available.")
+                print(f"You have selected {prd} - 1kg price is RS. {product[k]['price']}")
                 qty=int(input("Enter quantity : "))
                 if qty in product_qty:
                     print("Stock out")
+            else:
+                print(f"{prd} is not available.")
                 choice=input("Do you want something else? ").lower()
                 if choice=='y' or choice=='yes':
                     status=True
                 else:
                     status=False
     else:
-        print("\nInvalid Input enter 1 or 2 only.")
+        print("Invalid choice, Please select a valid option enter 1 or 2 only.")
