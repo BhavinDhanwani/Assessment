@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML Ajax</h1>
+    <from action="" method="POST">
+        {% csrf_token %}
+        <input type="text" id="nameid" placeholder="Enter Name">
+        <input type="text" id="subjectid" placeholder="Enter Subject">
+        <input type="button" id="btnid" value="submit" >
+    </from>
+    {% include 'chairmanapp/ajax.html' %}
+</body>
+</html>

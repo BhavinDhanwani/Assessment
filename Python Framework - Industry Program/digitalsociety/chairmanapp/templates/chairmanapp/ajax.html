@@ -1,0 +1,32 @@
+<script>
+    $("#btnid").click(function(){
+        console.log("function called ")
+
+        var name=$("#nameid").val();
+        var subject=$("#subjectid").val();
+        let csr=$("input[name=csrfmiddlewaretoken]").val();
+        console.log(name);
+
+        userdata={
+            name : name,
+            subject : subject,
+            csrfmiddlewaretoken: csr,
+        };
+
+        $.ajax(
+            {
+                url: "{% url 'addDataPage' %}",
+                method: "POST",
+                data: userdata,
+                success:function(Response)
+                {
+                    
+                },
+                // error : function(Response)
+                    // {
+
+                    // }
+            }
+        )
+    })
+</script>
